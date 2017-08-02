@@ -14,7 +14,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'murray' ); ?></a>
     <?php get_template_part('modules/header/jumbosearch'); ?>
 
-	<div id="social-icons-fixed" title="<?php _e('Follow us on Social Media',''); ?>">
+	<div id="social-icons-fixed" title="<?php _e('Follow us on Social Media','murray'); ?>">
 		<?php get_template_part('modules/social/social', 'soshion'); ?>
 	</div>	
 	

@@ -1,0 +1,135 @@
+#masthead {
+  background: @accent;
+  position: relative;
+  z-index: 90;
+  #text-title-desc {
+    clear: none;
+    float: left;
+    @media screen and (max-width: 768px) {
+      float: none;
+    }
+    vertical-align: middle;
+  }
+
+  h1.site-title {
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 0px;
+    a {
+      color: @header-color;
+    }
+  }
+  h2.site-description {
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+  }
+
+  #searchicon {
+    background: #eee;
+    border: solid 2px #ddd;
+    padding-top: 6px;
+    padding-bottom: 4px;
+  }
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    .layer {
+      min-height: 430px;
+    }
+  }
+
+  .searchform {
+    padding-left: 15px;
+    display: inline-block;
+    float: right;
+    margin-top: 35px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 30px;
+      margin-top: 25px;
+    }
+    input {
+      background: fade(@onaccent, 5%);
+      .placeholder(fade(@onaccent,50%),false);
+      font-weight: lighter;
+      padding: 5px 10px;
+      position: relative;
+      top: 1px;
+      border-radius: 0px;
+      min-width: 290px;
+      border: none;
+      color: @onaccent;
+      padding: 10px 15px;
+      outline: transparent solid 2px;
+      .transition(0.4s background ease);
+      &:active, &:focus { outline: solid 2px darken(@accent,3%); background: fade(@onaccent, 10%); }
+    }
+  }
+}
+.site-branding {
+  padding: 25px 0;
+  overflow: hidden;
+  display: inline-block;
+  float: none;
+  text-align: left;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    float: none;
+    padding-bottom: 5px;
+  }
+}
+
+#site-logo {
+  display: inline-block;
+  float: left;
+  @media screen and (max-width: 768px) {
+    float: none;
+  }
+}
+#social-search {
+  background: darken(@background, 8%);
+  padding: 16px 10px;
+  text-align: center;
+  .social-icons {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    border-right: solid 1px #ddd;
+    box-shadow: 1px 0px 0px #f7f7f7;
+    padding-right: 15px;
+  }
+  .social-icons a {
+    margin-right: 5px;
+
+    text-align: center;
+
+    img {
+      width: 37px;
+      height: 37px;
+      .transition( ease 0.4s );
+    }
+    @media screen and (max-width: 600px) {
+      float: none;
+    }
+    &:hover {
+      img {
+        .transform(scale(1.2));
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .social-icons {
+      border-right: none;
+      border-bottom: solid 1px #ddd;
+      box-shadow: 0px 1px 0px #f7f7f7;
+      padding-right: 0;
+      padding-bottom: 15px;
+      margin-bottom: 13px;
+    }
+    .searchform {
+      padding-left: 0;
+    }
+  }
+}

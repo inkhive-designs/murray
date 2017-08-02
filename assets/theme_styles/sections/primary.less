@@ -1,0 +1,135 @@
+/* Single Posts Area */
+.single-header {
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  .layer {
+    top: 0;
+    left: 0;
+    padding: 45px 0;
+    width: 100%;
+    height: 100%;
+    background: fade(black,50%);
+  }
+  .container {
+    text-align: center;
+    color: darken(@background, 5%);
+    a {
+      color: darken(@background, 10%);;
+    }
+  }
+}
+#primary-mono {
+  padding: 0 10px;
+  padding-left: 20px;
+  @media screen and (max-width:767px) {
+    padding-left: 10px;
+  }
+  h1.entry-title {
+    font-weight: normal;
+    color: @s-accent;
+    background: darken(@background, 10%);
+    font-size: 36px;
+    margin-top: 0px;
+    padding: 8px 10px;
+    margin-bottom: 0px;
+  }
+  .entry-meta, .entry-footer {
+    font-size: 12px;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 7px;
+    overflow: auto;
+    a {
+      color: @content;
+      text-decoration: underline;
+      &:hover {
+        color: @accent;
+      }
+    }
+  }
+  .entry-meta {
+    background: @s-accent;
+    color: white;
+    display: inline-block;
+    padding: 4px 10px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    a {
+      color: white;
+      &:hover {
+        color: #eee;
+      }
+    }
+  }
+  .entry-footer {
+    border-top: solid 1px #eee;
+    padding-top: 7px;
+    margin-top: 25px;
+    .post-edit-link {
+      float: right;
+
+    }
+    .cat-links {
+      margin-right: 6px;
+    }
+  }
+
+  .entry-content {
+    color: @content;
+    line-height: 1.7em;
+    font-size: 14px;
+  }
+}
+
+
+.page #primary-mono h1.entry-title {
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: left;
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  background: none;
+  position: relative;
+  @media screen and (max-width: 991px) {
+    margin-top: 20px;
+  }
+  span {
+    background: @background;
+    position: relative;
+    padding: 25px 15px;
+    padding-left: 0;
+    z-index: 1;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 96%;
+    height: 11px;
+    background: @pattern;
+    border-top: none;
+    position: absolute;
+    left: 2%;
+    top: 27%;
+    z-index: 0;
+  }
+}
+
+
+.edit-link {
+  display: inline-block;
+  float: right;
+}
+.page-header {
+  margin-top: 0px;
+  border-bottom: none;
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,25 @@
+/* ---------- social-icons ------------- */
+#social-icons-fixed {
+  position: fixed;
+  left: 0;
+  top: 30%;
+  width: 43px;
+  @media screen and (max-width: 600px) {
+    width: 32px;
+  }
+  border-right: none;
+  border-left: none;
+  z-index: 999;
+  box-shadow: -7px 2px 9px fade(black, 30%);
+  img {
+    margin-bottom: 0px;
+    .transition(0.4s all ease);
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+    &:hover {
+      -webkit-filter: brightness(1.2);
+      filter: brightness(1.2);
+    }
+  }
+
+}

@@ -1,0 +1,49 @@
+#sticky-post {
+  overflow: auto;
+  margin-bottom: 0px;
+  .sticky-image {
+    img {
+      width: 100%;
+      .transition(0.4s all ease);
+    }
+  }
+  &:hover {
+    img {
+      -webkit-filter: brightness(0.8);
+      filter: brightness(0.8);
+    }
+  }
+  .sticky-details {
+    .sticky-title {
+      font-size: 32px;
+      font-weight: normal;
+      line-height: 1.8em;
+      a {
+        color: @s-accent;
+      }
+    }
+    .sticky-desc {
+      color: fade(@content, 60%);
+      line-height: 2em;
+    }
+  }
+
+  /*for formats*/
+  .format-video, .format-image {
+    position: relative;
+    z-index: 2;
+    &:after {
+      content: "\f01d";
+      font-family: "FontAwesome";
+      position: absolute;
+      top: ~"calc(50% - 36px)";
+      font-size: 54px;
+      left: ~"calc(50% - 26px)";
+      color: fade(@onaccent,80%);
+      z-index: 5;
+    }
+  }
+  .format-image:after {
+    content: "\f030";
+  }
+}

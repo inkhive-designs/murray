@@ -1,0 +1,161 @@
+/* -------- Nav Menu ---------- */
+#site-navigation {
+  float: none;
+  width: auto;
+  clear: none;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background: @background;
+  .nav-container {
+    max-width: 1130px;
+    padding: 0px;
+    border-bottom: solid 1px fade(darken(@background,15%), 50%);
+    display: block;
+  }
+  ul {
+    li {
+      float: left;
+      a {
+        padding: 18px 18px;
+        color: lighten(@content,10%);
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 13px;
+        background: none;
+        .transition( 0.2s all ease );
+      }
+      &:hover {
+        a {
+          background: @s-accent;
+          color: white;
+        }
+      }
+      ul li .menu-desc {
+        display: none;
+      }
+      ul.sub-menu, ul.children {
+        background: @s-accent;
+        top: 100%;
+        display: block;
+        .transition( 0.4s all ease );
+        perspective: 1000;
+        -webkit-perspective: 1000;
+        transform-origin: top;
+        -webkit-transform-origin: top;
+        transform: perspective(350px) rotateX(-10deg);
+        -webkit-transform: perspective(350px) rotateX(-10deg);
+        -moz-transform: perspective(350px) rotateX(-10deg);
+        opacity: 0;
+        text-align: left;
+        visibility: hidden;
+        a {
+          color: @background;
+          background: @s-accent;
+        }
+        li ul {
+          transform-origin: left;
+          -webkit-transform-origin: left;
+          .transition( 0.4s all ease );
+          left: 100%;
+          top: 0;
+          opacity: 0 !important;
+          -webkit-transform: rotateY(15deg) !important;
+          transform: rotateY(15deg) !important;
+          -moz-transform: rotateY(15deg) !important;
+          li ul {
+            display: none !important;
+          }
+        }
+        li:hover {
+          .transition(0.2s all ease);
+          /* -webkit-transition: 0.2s all ease !important; */
+          ul {
+            opacity: 1 !important;
+            transform: rotateY(5deg) !important;
+            -webkit-transform: rotateY(5deg) !important;
+            -moz-transform: rotateY(5deg) !important;
+          }
+        }
+        a {
+          padding: 8px 15px;
+          font-weight: lighter;
+          font-size: 14px;
+          transition: 0.4s background ease, 0.6s padding ease;
+          &:hover {
+            background: darken(@s-accent, 5%);
+            padding-left: 19px;
+          }
+        }
+      }
+      &:hover {
+        .transition(0.4s all ease);
+        -webkit-transition: 0.4s all ease !important;
+        ul.sub-menu, ul.children {
+          display: block;
+          transform: rotateX(0deg);
+          -webkit-transform: rotateX(0deg);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    /* for the Currently active page */
+    .current_page_item > a, .current-menu-item > a, .current_page_ancestor > a {
+    }
+  }
+  .fa {
+    padding: 0 5px 0 0;
+  }
+  .menu-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: #eee;
+    display: inline-block;
+    margin-top: -5px;
+    font-style: italic;
+    text-transform: lowercase;
+  }
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a {
+    color: @accent;
+  }
+  @media screen and (max-width: 767px) {
+    margin-top: 0;
+    float: none;
+    text-align: center;
+    width: 100%;
+    .td_mobile_menu_wrap {
+      min-height: 42px;
+      padding: 20px;
+      position: relative;
+      min-width: 150px;
+      display: inline-block;
+      &:after {
+        content: "\f103";
+        font-family: "FontAwesome";
+        color: white;
+        position: absolute;
+        right: 27px;
+        top: 23px;
+        font-size: 18px;
+      }
+    }
+    .mobileMenu {
+      padding: 5px 8px;
+      border: none;
+      box-shadow: none;
+      background: fade(black, 50%);
+      color: white;
+      min-width: 150px;
+      background-image: none;
+      -webkit-appearance: none;
+      position: relative;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

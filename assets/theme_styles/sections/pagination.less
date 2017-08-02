@@ -1,0 +1,33 @@
+/* --------------- pagination ------------ */
+.pagination {
+  margin: 20px 0;
+  padding-top: 25px;
+  text-align: center;
+  width: 100%;
+  .page-numbers {
+    display: inline-block;
+    padding: 5px;
+    color: darken(@content, 10%);
+    font-weight: bold;
+    .title-font;
+    .transition(0.4s all ease);
+    &:hover {
+      .transform(scale(1.2));
+    }
+  }
+  .current {
+    border: solid 2px @accent;
+    padding: 7px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+  .dots, .current {
+    pointer-events: none;
+  }
+}
+#content {
+  margin-top: 10px;
+  padding-top: 30px;
+}

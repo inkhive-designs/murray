@@ -1,0 +1,48 @@
+<<<<<<< HEAD
+=======
+# Add any directories, files, or patterns you don't want to be tracked by version control
+>>>>>>> c78351b2073eff15e51119d688b944b2968d2fab
+.DS_Store
+**/.DS_Store
+.git/
+.git
+config.codekit
+.codekit-cache
+.idea
+.idea/
+
+.AppleDouble
+.LSOverride
+Icon
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+Thumbs.db
+ehthumbs.db
+# Folder config file
+Desktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+=======
+*.log
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+>>>>>>> 720fbf29f8f8cd86dadbecd6883976ec45bb2bdf

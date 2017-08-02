@@ -26,9 +26,13 @@ get_header(); ?>
 	} ?>
 	
 	<div id="sticky-post">
-		<div <?php post_class("sticky-image col-md-8"); ?>>
+		<div <?php post_class("sticky-image col-md-8");
+		    if(has_post_thumbnail()):?>>
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('murray-thumb'); ?></a>
-		</div>
+            <?php else:?>
+            <a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_url')?>/assets/images/sticky-default.jpg"/></a>
+            <?php endif;?>
+            </div>
 		
 		<div class="sticky-details col-md-4">
 			<div class="sticky-title title-font">

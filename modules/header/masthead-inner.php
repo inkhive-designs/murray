@@ -1,8 +1,8 @@
 <div class="site-branding">
-    <?php if ( murray_has_logo() ) : ?>
-        <div id="site-logo">
-            <?php murray_logo() ?>
-        </div>
+    <?php if ( has_custom_logo() ) : ?>
+            <div id="site-logo">
+                <?php the_custom_logo(); ?>
+            </div>
     <?php endif; ?>
     <div id="text-title-desc">
         <h1 class="site-title title-font"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

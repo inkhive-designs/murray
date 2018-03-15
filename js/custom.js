@@ -20,9 +20,9 @@ jQuery(window).load(function() {
         prevText: "<i class='fa fa-chevron-circle-left'></i>",
         nextText: "<i class='fa fa-chevron-circle-right'></i>",
     });
-});			
+});
 
 
 jQuery(function () {
     jQuery('.featured-section .item').hoverdir({hoverElem: '.featured-caption', speed: 500});
-});		
+});

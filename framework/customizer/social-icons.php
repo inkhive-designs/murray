@@ -5,6 +5,8 @@ function murray_customize_register_social( $wp_customize )
     $wp_customize->add_section('murray_social_section', array(
         'title' => __('Social Icons', 'murray'),
         'priority' => 44,
+        'panel' => 'murray_header_panel'
+
     ));
 
     $social_networks = array( //Redefinied in Sanitization Function.

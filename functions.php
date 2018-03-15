@@ -35,6 +35,9 @@ function murray_setup() {
 	 *
 	 */
 	add_theme_support( 'title-tag' );
+
+    //Custom Logo
+    add_theme_support( 'custom-logo' );
 	
 	/**
 	 * Set the content width based on the theme's design and stylesheet.
@@ -42,17 +45,7 @@ function murray_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 640; /* pixels */
 	}
-	
-	/*
-	 * Custom Logo Support 
-	 *
-	 */ 	 
-	 add_theme_support('custom-logo',array(
-		 'height' => 80,
-		 'width' => 300,
-		 'flex-height' => true,
-		 'flex-width' => true
-	 ));
+
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -111,8 +104,8 @@ function murray_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title title-font">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title title-font">',
+		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
@@ -120,8 +113,8 @@ function murray_widgets_init() {
 		'id'            => 'footer-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title title-font">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title title-font">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -129,8 +122,8 @@ function murray_widgets_init() {
 		'id'            => 'footer-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title title-font">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title title-font">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -138,8 +131,8 @@ function murray_widgets_init() {
 		'id'            => 'footer-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title title-font">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title title-font">',
+		'after_title'   => '</h3>',
 	) );
 	
 }
@@ -151,9 +144,9 @@ add_action( 'widgets_init', 'murray_widgets_init' );
 function murray_scripts() {
 	wp_enqueue_style( 'murray-style', get_stylesheet_uri() );
 	
-	wp_enqueue_style('murray-title-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('murray_title_font', 'Raleway') ).':100,300,400,700' ));
+	wp_enqueue_style('murray-title-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('murray_title_font', 'Fjalla One') ).':100,300,400,700' ));
 	
-	wp_enqueue_style('murray-body-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('murray_body_font', 'Khula') ).':100,300,400,700' ));
+	wp_enqueue_style('murray-body-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", esc_html(get_theme_mod('murray_body_font', 'Source Sans Pro') ).':100,300,400,700' ));
 	
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );
 	

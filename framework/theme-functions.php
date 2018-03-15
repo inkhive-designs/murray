@@ -200,7 +200,7 @@ function murray_featured_posts( $title, $category_id = 0, $icon = "fa-star"  ) {
 	
 <?php }
 //Create an Array to Store Post Ids of all posts that have been displayed already.
-$murray_fpost_ids = [];
+$murray_fpost_ids = array();
 			
 //Function to Exclude already displayed posts form the Homepage.
 for ($i = 1; $i < 3; $i++ ) :
@@ -208,7 +208,7 @@ for ($i = 1; $i < 3; $i++ ) :
 		
 		$args = array( 
 			'posts_per_page' => 3,
-			'cat' => get_theme_mod('murray_featposts_cat'.$i),
+			'cat' => esc_html(get_theme_mod('murray_featposts_cat'.$i)),
 			'ignore_sticky_posts' => true,
 		);
 		

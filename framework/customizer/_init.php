@@ -13,9 +13,14 @@ function murray_customize_register( $wp_customize )
 {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
+
+    $wp_customize->get_section( 'colors' )->panel  = 'murray_design_panel';
+    $wp_customize->get_section( 'title_tagline' )->panel  = 'murray_header_panel';
+    $wp_customize->get_section( 'title_tagline' )->title  = __('Title Tagline & Logo','murray');
 }
 add_action( 'customize_register', 'murray_customize_register' );
 
+require_once get_template_directory().'/framework/customizer/_header.php';
 require_once get_template_directory().'/framework/customizer/_googlefonts.php';
 require_once get_template_directory().'/framework/customizer/featured-posts.php';
 require_once get_template_directory().'/framework/customizer/_sanitization.php';

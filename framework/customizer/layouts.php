@@ -3,7 +3,7 @@ function murray_customize_register_layouts( $wp_customize )
 {
 // Layout and Design
     $wp_customize->add_panel('murray_design_panel', array(
-        'priority' => 40,
+        'priority' => 4,
         'capability' => 'edit_theme_options',
         'theme_supports' => '',
         'title' => __('Design & Layout', 'murray'),
@@ -13,7 +13,7 @@ function murray_customize_register_layouts( $wp_customize )
         'murray_design_options',
         array(
             'title' => __('Blog Layout', 'murray'),
-            'priority' => 0,
+            'priority' => 1,
             'panel' => 'murray_design_panel'
         )
     );
@@ -52,7 +52,7 @@ function murray_customize_register_layouts( $wp_customize )
         'murray_sidebar_options',
         array(
             'title' => __('Sidebar Layout', 'murray'),
-            'priority' => 0,
+            'priority' => 2,
             'panel' => 'murray_design_panel'
         )
     );
@@ -165,5 +165,55 @@ function murray_customize_register_layouts( $wp_customize )
             'type' => 'text'
         )
     );
+    
+    //Custom CSS
+
+    class murray_Custom_CSS_Control extends WP_Customize_Control {
+        public $type = 'textarea';
+
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <textarea rows="8" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+            </label>
+            <?php
+        }
+    }
+
+    $wp_customize-> add_section(
+        'murray_custom_codes',
+        array(
+            'title'			=> __('Custom CSS','murray'),
+            'description'	=> __('Enter your Custom CSS to Modify design.','murray'),
+            'priority'		=> 11,
+            'panel'			=> 'murray_design_panel'
+        )
+    );
+
+    $wp_customize->add_setting(
+        'murray_custom_css',
+        array(
+            'default'		=> '',
+            'capability'           => 'edit_theme_options',
+            'sanitize_callback'    => 'wp_filter_nohtml_kses',
+            'sanitize_js_callback' => 'wp_filter_nohtml_kses'
+        )
+    );
+
+    $wp_customize->add_control(
+        new murray_Custom_CSS_Control(
+            $wp_customize,
+            'murray_custom_css',
+            array(
+                'section' => 'murray_custom_codes',
+                'settings' => 'murray_custom_css'
+            )
+        )
+    );
+
+    function murray_sanitize_text( $input ) {
+        return wp_kses_post( force_balance_tags( $input ) );
+    }
 }
-add_action('customizer_register', 'murray_customizer_register_layouts');
+add_action('customize_register', 'murray_customize_register_layouts');

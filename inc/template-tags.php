@@ -135,7 +135,7 @@ function murray_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'murray' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'murray' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php esc_html_e( 'Pingback:', 'murray' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'murray' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -156,7 +156,7 @@ function murray_comment( $comment, $args, $depth ) {
 				</div><!-- .comment-metadata -->
 
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'murray' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'murray' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 

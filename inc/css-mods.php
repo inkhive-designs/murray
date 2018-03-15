@@ -15,11 +15,11 @@ function murray_custom_css_mods() {
 	
 	
 	if ( get_theme_mod('murray_title_font','Fjalla One') ) :
-		echo ".title-font, h1, h2, .section-title { font-family: ".esc_html(get_theme_mod('murray_title_font'))."; }";
+		echo ".title-font, h1, h2, .section-title { font-family: ".esc_html(get_theme_mod('murray_title_font','Fjalla One'))."; }";
 	endif;
 	
 	if ( get_theme_mod('murray_body_font','Source Sans Pro') ) :
-		echo "body { font-family: ".esc_html(get_theme_mod('murray_body_font'))."; }";
+		echo "body { font-family: ".esc_html(get_theme_mod('murray_body_font','Source Sans Pro'))."; }";
 	endif;
 	
 	if ( get_theme_mod('murray_site_titlecolor') ) :
@@ -35,6 +35,10 @@ function murray_custom_css_mods() {
 	if ( get_theme_mod('murray_hide_title_tagline') ) :
 		echo "#masthead .site-branding #text-title-desc { display: none; }";
 	endif;
+
+    if ( get_theme_mod('murray_custom_css') ) :
+        echo  esc_html( get_theme_mod('murray_custom_css') );
+    endif;
 
 	echo "</style>";
 }

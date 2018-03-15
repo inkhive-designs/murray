@@ -28,9 +28,9 @@ get_header(); ?>
 	<div id="sticky-post">
 		<div <?php post_class("sticky-image col-md-8");
 		    if(has_post_thumbnail()):?>>
-			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('murray-thumb'); ?></a>
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('murray-thumb',array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
             <?php else:?>
-            <a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_url')?>/assets/images/sticky-default.jpg"/></a>
+            <a href="<?php the_permalink(); ?>"><img alt="<?php the_title() ?>" src="<?php bloginfo('template_url')?>/assets/images/sticky-default.jpg"/></a>
             <?php endif;?>
             </div>
 		
@@ -56,7 +56,7 @@ get_header(); ?>
 		for ($i = 1; $i < 3; $i++ ) :
 			if (get_theme_mod('murray_featposts_enable'.$i) ) :
 				//Call the Function to Display the Featured Posts
-				murray_featured_posts( 
+				murray_featured_posts(
 					get_theme_mod('murray_featposts_title'.$i,
 					__("Section Title","murray")),
 					get_theme_mod('murray_featposts_cat'.$i,0),
@@ -72,7 +72,7 @@ get_header(); ?>
 		
 		<main id="main" class="site-main" role="main">
 		<div class="section-title">
-			<i class="fa fa-home"></i><span><?php _e('Latest Posts','murray'); ?></span>
+			<i class="fa fa-home"></i><span><?php esc_html_e('Latest Posts','murray'); ?></span>
 		</div>	
 		<?php if ( have_posts() ) : ?>
 		
@@ -95,7 +95,7 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'modules/content/content', 'none' ); ?>
 
 		<?php endif; ?>
 

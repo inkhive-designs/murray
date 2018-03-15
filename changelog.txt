@@ -1,6 +1,11 @@
 ChangeLog
 =========
+Version: 1.0.1
 
+    i) Custom Logo Added.
+    ii) Google fonts bug fixed.
+    iii) SEO Ready.
+    iv) Other minor bug fixed.
 
 Version 0.9*
 

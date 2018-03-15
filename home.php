@@ -30,7 +30,7 @@ get_header(); ?>
 		    if(has_post_thumbnail()):?>>
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('murray-thumb',array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
             <?php else:?>
-            <a href="<?php the_permalink(); ?>"><img alt="<?php the_title() ?>" src="<?php bloginfo('template_url')?>/assets/images/sticky-default.jpg"/></a>
+            <a href="<?php the_permalink(); ?>"><img alt="<?php the_title() ?>" src="<?php echo esc_url('template_url')?>/assets/images/sticky-default.jpg"/></a>
             <?php endif;?>
             </div>
 		
